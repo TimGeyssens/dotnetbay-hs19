@@ -1,4 +1,10 @@
-# dotnetbay - A .NET Auction Bootstrapper 
+#uBay, Umbraco Auction site starterkit
+A quick attempt at getting an umbraco powered Auction site running. 
+Using the power of [Umbraco](https://umbraco.com/) and some addons like [UI-O-Matic](https://github.com/TimGeyssens/UIOMatic) and [Cashier](https://github.com/base33/Cashier)
+
+Using dotnetbay as the basics...
+
+## dotnetbay - A .NET Auction Bootstrapper 
 A bootstrap solution to build your own basic auction portal.
 
 ## Goals
