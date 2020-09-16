@@ -165,8 +165,8 @@ namespace DotNetBay.Data.Provider.FileStorage
 
                 this.ThrowForInvalidReferences(bid);
 
-                var maxId = this.loadedData.Bids.Any() ? this.loadedData.Bids.Max(a => a.Id) : 0;
-                bid.Id = maxId + 1;
+                //var maxId = this.loadedData.Bids.Any() ? this.loadedData.Bids.Max(a => a.Id) : 0;
+                bid.Id = Guid.NewGuid();
                 bid.Accepted = null;
                 bid.TransactionId = Guid.NewGuid();
 

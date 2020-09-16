@@ -17,10 +17,10 @@ namespace DotNetBay.Data.Entity
 
         public string Title { get; set; }
 
-        public string Description { get; set; }
+        //public string Description { get; set; }
 
-        [SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Keep it as byte-array for compatibility reasons")]
-        public byte[] Image { get; set; }
+        //[SuppressMessage("Microsoft.Performance", "CA1819:PropertiesShouldNotReturnArrays", Justification = "Keep it as byte-array for compatibility reasons")]
+        //public byte[] Image { get; set; }
 
         public double CurrentPrice { get; set; }
 

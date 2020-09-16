@@ -56,10 +56,10 @@ namespace DotNetBay.Data.Provider.FileStorage
         internal override void AfterLoad(DataRootElement data)
         {
             // Reload Images from FS
-            foreach (var auction in data.Auctions)
-            {
-                auction.Image = this.LoadBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id));
-            }
+            //foreach (var auction in data.Auctions)
+            //{
+            //    //auction.Image = this.LoadBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id));
+            //}
         }
 
         internal override void BeforeLoad(DataRootElement data)
@@ -71,10 +71,10 @@ namespace DotNetBay.Data.Provider.FileStorage
         internal override void AfterSave(DataRootElement data)
         {
             // Reload Images from FS
-            foreach (var auction in data.Auctions)
-            {
-                auction.Image = this.LoadBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id));
-            }
+            //foreach (var auction in data.Auctions)
+            //{
+            //    auction.Image = this.LoadBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id));
+            //}
         }
 
         internal override void BeforeSave(DataRootElement data)
@@ -83,11 +83,11 @@ namespace DotNetBay.Data.Provider.FileStorage
             Directory.CreateDirectory(this.binaryDataDirectory);
 
             // Remove byte values from images and save individually
-            foreach (var auction in data.Auctions)
-            {
-                this.SaveBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id), auction.Image);
-                auction.Image = null;
-            }
+            //foreach (var auction in data.Auctions)
+            //{
+            //    this.SaveBinary(string.Format(CultureInfo.InvariantCulture, "auction-{0}-image1.jpg", auction.Id), auction.Image);
+            //    auction.Image = null;
+            //}
         }
 
         #endregion

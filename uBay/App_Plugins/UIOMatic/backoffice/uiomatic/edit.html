@@ -1,0 +1,103 @@
+﻿<form name="objectForm"
+      ng-controller="uioMatic.ObjectEditController"
+      ng-show="loaded"
+      ng-submit="save(object)"
+      val-form-manager
+      class="uiomatic">
+    <umb-editor-view>
+
+
+        <!--<umb-header tabs="content.tabs">-->
+
+
+        <div ng-if="type.nameFieldIndex > -1">
+            <div class="umb-editor-header">
+                <div class="flex items-center" style="height: 100%;">
+                    <div class="flex items-center" style="flex: 1;">
+                        <div class="umb-editor-header__name-and-description" style="flex: 1 1 auto;">
+                            <div class="umb-editor-header__name-wrapper">
+                                <label for="headerName" class="sr-only">{{headerCaption}}</label>
+                                <input class="umb-editor-header__name-input" id="headerName" ng-model="properties[type.nameFieldIndex].value" placeholder="Enter {{properties[type.nameFieldIndex].name}}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="type.nameFieldIndex == -1">
+
+            <umb-editor-header name="headerCaption"
+                               name-locked="headerCaption"
+                               hide-icon="true"
+                               hide-description="true"
+                               hide-alias="true">
+            </umb-editor-header>
+
+
+        </div>
+
+
+
+        <!--</umb-header>-->
+
+        <umb-editor-container>
+            <div class="tab-content form-horizontal">
+                <div ng-if="content">
+                    <ng-form name="tabbedContentForm">
+                        <div class="umb-group-panel" data-app-anchor="{{group.id}}" data-element="group-{{group.id}}" ng-repeat="group in content.tabs track by group.label">
+
+                            <div class="umb-group-panel__header">
+                                <div id="group-{{group.id}}">{{ group.label }}</div>
+                            </div>
+
+                            <div class="umb-group-panel__content">
+                                <div class="umb-property" ng-repeat="property in properties | removeProperty:type.nameFieldKey | filter:{tab: group.label}">
+                                    <umb-control-group label="{{property.name}}" description="{{property.description}}" ng-if="!queryString[property.columnName]">
+                                        <div ng-include="property.view"></div>
+                                    </umb-control-group>
+                                </div>
+                            </div>
+
+                        </div>
+                    </ng-form>
+                </div>
+
+                <div class="umb-group-panel" ng-if="!content">
+                    <div class="umb-group-panel__content">
+                        <div class="umb-property" ng-repeat="property in properties | removeProperty:type.nameFieldKey">
+                            <umb-control-group label="{{property.name}}" description="{{property.description}}" ng-if="!queryString[property.columnName]">
+                                <div ng-include="property.view"></div>
+                            </umb-control-group>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </umb-editor-container>
+
+        <umb-editor-footer>
+
+            <umb-editor-footer-content-right>
+                <div class="btn-group" ng-show="fromList">
+                    <a class="btn" ng-click="navigate(returnUrl)">
+                        <localize key="buttons_returnToList">Return to list</localize>
+                    </a>
+                </div>
+
+                <div class="btn-group" ng-hide="readOnly">
+                    <button type="submit" data-hotkey="ctrl+s" class="btn btn-success" ng-show="editing">
+                        <localize key="buttons_save">Save</localize>
+                    </button>
+                    <button type="submit" data-hotkey="ctrl+s" class="btn btn-success" ng-hide="editing">
+                        Create
+                    </button>
+                </div>
+            </umb-editor-footer-content-right>
+
+
+        </umb-editor-footer>
+    </umb-editor-view>
+</form>
+
+

@@ -123,10 +123,10 @@ namespace DotNetBay.Core
                 throw new ArgumentException("Negative startprices are not allowed", "auction");
             }
 
-            if (string.IsNullOrEmpty(auction.Title))
-            {
-                throw new ArgumentException("Every auction needs a title", "auction");
-            }
+            //if (string.IsNullOrEmpty(auction.Title))
+            //{
+            //    throw new ArgumentException("Every auction needs a title", "auction");
+            //}
         }
     }
 }

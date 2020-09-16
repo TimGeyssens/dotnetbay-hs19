@@ -9,7 +9,7 @@ namespace DotNetBay.Data.Entity
             this.TransactionId = Guid.NewGuid();
         }
 
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         public DateTime ReceivedOnUtc { get; set; }
 
