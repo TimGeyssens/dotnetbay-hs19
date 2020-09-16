@@ -1,4 +1,4 @@
-#uBay, Umbraco Auction site starterkit
+# uBay, Umbraco Auction site starterkit
 A quick attempt at getting an umbraco powered Auction site running. 
 Using the power of [Umbraco](https://umbraco.com/) and some addons like [UI-O-Matic](https://github.com/TimGeyssens/UIOMatic) and [Cashier](https://github.com/base33/Cashier)
 
